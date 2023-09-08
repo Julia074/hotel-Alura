@@ -56,8 +56,7 @@ public class Reserva {
 //		// TODO Auto-generated method stub
 //		return String.format("La reserva generada fue: %d, %s, %s, %s, %s", this.id, this.fechaE, this.fechaS, this.valor, this.formaPago);
 //	}
-//	
-	
+
 	
 }
 

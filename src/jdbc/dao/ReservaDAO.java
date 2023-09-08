@@ -20,7 +20,7 @@ public class ReservaDAO {
 	
 	public void guardar(Reserva reserva) {
 		try {
-			String sql = "INSERT INTO reservas (fecha_entrada, fecha_salida, valor, formaPago) VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO reservas (fecha_entrada, fecha_salida, valor, forma_Pago) VALUES (?, ?, ?, ?)";
 
 			try (PreparedStatement pstm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -63,7 +63,7 @@ public class ReservaDAO {
 		List<Reserva> reservas = new ArrayList<Reserva>();
 		try {
 
-			String sql = "SELECT id, fecha_entrada, fecha_salida, valor, formaPago FROM reservas WHERE id = ?";
+			String sql = "SELECT id, fecha_entrada, fecha_salida, valor, forma_Pago FROM reservas WHERE id = ?";
 
 			try (PreparedStatement pstm = connection.prepareStatement(sql)) {
 				pstm.setString(1, id);
@@ -88,7 +88,7 @@ public class ReservaDAO {
 	
 	public void Actualizar(Date fechaE, Date fechaS, String valor, String formaPago, Integer id) {
 		try (PreparedStatement stm = connection
-				.prepareStatement("UPDATE reservas SET fecha_entrada = ?, fecha_salida = ?, valor = ?, formaPago = ? WHERE id = ?")) {
+				.prepareStatement("UPDATE reservas SET fecha_entrada = ?, fecha_salida = ?, valor = ?, forma_Pago = ? WHERE id = ?")) {
 			stm.setDate(1, fechaE);
 			stm.setDate(2, fechaS);
 			stm.setString(3, valor);

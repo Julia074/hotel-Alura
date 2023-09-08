@@ -22,8 +22,7 @@ private Connection connection;
 	
 	public void guardar(Huespedes huesped) {
 		try {
-			String sql = "INSERT INTO huespedes (nombre, apellido, fecha_nacimiento, nacionalidad, telefono, idReserva) VALUES (?, ?, ?, ?,?,?)";
-
+			String sql = "INSERT INTO huespedes (nombre,apellido,fecha_nacimiento,nacionalidad,telefono,IdReserva) VALUES(?,?,?,?,?,?)";
 			try (PreparedStatement pstm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
 				pstm.setString(1, huesped.getNombre());
